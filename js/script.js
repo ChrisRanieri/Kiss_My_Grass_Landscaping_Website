@@ -1,0 +1,37 @@
+//javascript code Chris Ranieri Project 1
+
+"use strict";
+
+//JavaScript Accordion about page
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+} 
+
+
+//Change header background color on scroll
+$(function() {
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 50) {
+            $(".header").addClass("bg_active");
+        } else {
+            //remove the background property
+           $(".header").removeClass("bg_active");
+        }
+    });
+});
+
